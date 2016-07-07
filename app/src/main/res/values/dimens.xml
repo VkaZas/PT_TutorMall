@@ -2,11 +2,15 @@
     <!--layout size-->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="list_item_avatar_size">40dp</dimen>
-    <dimen name="list_item_height">100dp</dimen>
+    <dimen name="list_item_vertical_margin">5dp</dimen>
+    <dimen name="list_item_avatar_size">60dp</dimen>
+    <dimen name="list_item_height">90dp</dimen>
 
     <!--text size-->
-    <dimen name="list_item_text_large">15sp</dimen>
-    <dimen name="list_item_text_medium">10sp</dimen>
-    <dimen name="list_item_text_small">5sp</dimen>
+    <dimen name="list_item_text_large">20sp</dimen>
+    <dimen name="list_item_text_medium">13sp</dimen>
+    <dimen name="list_item_text_small">8sp</dimen>
+
+    <!--slider size-->
+    <dimen name="propagate_slider_height">160dp</dimen>
 </resources>

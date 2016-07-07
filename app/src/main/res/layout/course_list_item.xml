@@ -25,6 +25,8 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/darkgray"
+            android:textAlignment="viewStart"
+            android:layout_marginTop="@dimen/list_item_vertical_margin"
             android:textSize="@dimen/list_item_text_medium"/>
 
         <TextView
@@ -32,6 +34,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
+            android:textAlignment="center"
             android:textSize="@dimen/list_item_text_large" />
 
         <TextView
@@ -39,6 +42,8 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/lightgray"
+            android:textAlignment="viewEnd"
+            android:layout_marginBottom="@dimen/list_item_vertical_margin"
             android:textSize="@dimen/list_item_text_small"/>
 
     </LinearLayout>
