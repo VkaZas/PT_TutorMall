@@ -1,6 +1,8 @@
 package com.zju.app.tutormall;
 
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -10,9 +12,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.SearchView;
 
 import android.support.v7.widget.Toolbar;
 
+import com.zju.app.tutormall.adapters.FragmentTabAdapter;
 import com.zju.app.tutormall.fragments.BuyCourseFragment;
 import com.zju.app.tutormall.fragments.MyInfoFragment;
 import com.zju.app.tutormall.fragments.PropagateFragment;
@@ -77,18 +81,23 @@ public class MainActivity extends AppCompatActivity {
                 new BuyCourseFragment(),
                 new MyInfoFragment()
         };
-        Adapter adapter = new Adapter(getSupportFragmentManager());
-        adapter.addFragment(fragments[0], "咨询");
-        adapter.addFragment(fragments[1], "授课");
-        adapter.addFragment(fragments[2], "听课");
-        adapter.addFragment(fragments[3], "我的");
-        viewPager.setAdapter(adapter);
+        FragmentTabAdapter fragmentTabAdapter = new FragmentTabAdapter(getSupportFragmentManager());
+        fragmentTabAdapter.addFragment(fragments[0], "咨询");
+        fragmentTabAdapter.addFragment(fragments[1], "授课");
+        fragmentTabAdapter.addFragment(fragments[2], "听课");
+        fragmentTabAdapter.addFragment(fragments[3], "我的");
+        viewPager.setAdapter(fragmentTabAdapter);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView = (SearchView) menu.findItem(R.id.search_course).getActionView();
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+
         return true;
     }
 
@@ -105,36 +114,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    static class Adapter extends FragmentPagerAdapter {
-        private final List<Fragment> mFragments = new ArrayList<>();
-        private final List<String> mFragmentTitles = new ArrayList<>();
-
-        public Adapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        public void addFragment(Fragment fragment, String title) {
-            mFragments.add(fragment);
-            mFragmentTitles.add(title);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return mFragments.get(position);
-        }
-
-        @Override
-        public int getCount() {
-            return mFragments.size();
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return mFragmentTitles.get(position);
-        }
-
     }
 
 }
