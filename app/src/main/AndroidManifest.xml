@@ -47,9 +47,9 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" >
         </activity>
 
-        <!-- OrderDetailActivity -->
+        <!-- StuOrderDetailActivity -->
         <activity
-            android:name=".OrderDetailActivity"
+            android:name=".StuOrderDetailActivity"
             android:label="@string/title_activity_order_detail"
             android:theme="@style/Theme.AppCompat.NoActionBar" >
         </activity>

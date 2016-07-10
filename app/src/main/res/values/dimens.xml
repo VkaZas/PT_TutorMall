@@ -9,7 +9,7 @@
     <!--text size-->
     <dimen name="list_item_text_large">20sp</dimen>
     <dimen name="list_item_text_medium">13sp</dimen>
-    <dimen name="list_item_text_small">8sp</dimen>
+    <dimen name="list_item_text_small">10sp</dimen>
 
     <!--slider size-->
     <dimen name="propagate_slider_height">160dp</dimen>
@@ -32,4 +32,9 @@
     <dimen name="edit_text_padding_horizontal">16dp</dimen>
     <dimen name="edit_text_padding_vertical">3dp</dimen>
     <dimen name="edit_text_size">14sp</dimen>
+
+    <!--margins-->
+    <dimen name="small_margin">8dp</dimen>
+    <dimen name="medium_margin">16dp</dimen>
+    <dimen name="large_margin">24dp</dimen>
 </resources>
