@@ -13,4 +13,23 @@
 
     <!--slider size-->
     <dimen name="propagate_slider_height">160dp</dimen>
+
+    <!--detail page size-->
+    <dimen name="detail_backdrop_height">256dp</dimen>
+
+    <!--card size-->
+    <dimen name="card_margin">16dp</dimen>
+    <dimen name="card_item_height">150dp</dimen>
+    <dimen name="card_item_width">300dp</dimen>
+    <dimen name="card_item_avatar_size">70dp</dimen>
+
+    <!--floating action button size-->
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!--edit text size-->
+    <dimen name="edit_text_height">35dp</dimen>
+    <dimen name="edit_text_width">230dp</dimen>
+    <dimen name="edit_text_padding_horizontal">16dp</dimen>
+    <dimen name="edit_text_padding_vertical">3dp</dimen>
+    <dimen name="edit_text_size">14sp</dimen>
 </resources>

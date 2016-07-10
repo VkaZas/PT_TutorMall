@@ -61,7 +61,7 @@ public class PropagateFragment extends Fragment {
 
     private void setupRecyclerView(RecyclerView rv) {
         rv.setLayoutManager(new LinearLayoutManager(rv.getContext()));
-        rv.setAdapter(new CourseRecyclerViewAdapter(getActivity()));
+        rv.setAdapter(new CourseRecyclerViewAdapter(getActivity(), R.layout.course_list_item));
 
         // divider between items
         rv.addItemDecoration(new RecyclerViewDivider(getActivity(),

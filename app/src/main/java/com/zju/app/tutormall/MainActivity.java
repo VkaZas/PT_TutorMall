@@ -28,6 +28,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private Fragment[] fragments;
+    private Toolbar toolbar;
     int currentTabIndex;
 
     @Override
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         /**
          * Setting up Toolbar
          * */
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("互课");
         toolbar.setBackgroundColor(0xc0c0c0);
         setSupportActionBar(toolbar);
@@ -61,6 +62,11 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onPageSelected(int position) {
                     currentTabIndex = position;
+                    if (position == 2) {
+                        toolbar.setTitle("已购课程(3)");
+                    } else {
+                        toolbar.setTitle("互课");
+                    }
                 }
 
                 @Override
