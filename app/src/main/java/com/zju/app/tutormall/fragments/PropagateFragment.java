@@ -1,7 +1,6 @@
 package com.zju.app.tutormall.fragments;
 
 
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,8 +12,10 @@ import android.view.ViewGroup;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.zju.app.tutormall.R;
-import com.zju.app.tutormall.adapters.CourseRecyclerViewAdapter;
+import com.zju.app.tutormall.adapters.BriefCourseListAdapter;
+import com.zju.app.tutormall.adapters.BuyOrderListAdapter;
 import com.zju.app.tutormall.adapters.RecyclerViewDivider;
+import com.zju.app.tutormall.application.TutorApplication;
 
 import java.util.ArrayList;
 
@@ -22,12 +23,18 @@ import java.util.ArrayList;
 public class PropagateFragment extends Fragment {
 
     private int maxSlider = 4;
+    private TutorApplication app;
 
 
     public PropagateFragment() {
         // Required empty public constructor
     }
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        app = (TutorApplication) getActivity().getApplication();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,7 +47,7 @@ public class PropagateFragment extends Fragment {
         SliderLayout sliderShow = (SliderLayout) view.findViewById(R.id.propagate_slider);
         ArrayList<TextSliderView> sliders = new ArrayList<TextSliderView>();
         int[] images = {R.drawable.bigbang, R.drawable.game_of_thrones, R.drawable.hannibal, R.drawable.house};
-        String[] descriptions = {"Bigbang", "Game of Thrones", "Hannibal", "House of Cards"};
+        String[] descriptions = {"量子物理学", "计算机影视特效设计", "发型教程", "静物素描"};
         for (int i=0; i<maxSlider; i++) {
             TextSliderView slide = new TextSliderView(getActivity());
             slide.description(descriptions[i]).image(images[i]);
@@ -61,13 +68,7 @@ public class PropagateFragment extends Fragment {
 
     private void setupRecyclerView(RecyclerView rv) {
         rv.setLayoutManager(new LinearLayoutManager(rv.getContext()));
-        rv.setAdapter(new CourseRecyclerViewAdapter(getActivity(), R.layout.course_list_item));
-
-        // divider between items
-        rv.addItemDecoration(new RecyclerViewDivider(getActivity(),
-                LinearLayoutManager.VERTICAL,
-                20,
-                getResources().getColor(R.color.mistyrose)));
+        rv.setAdapter(new BriefCourseListAdapter(getActivity(), app.propCourseInfoList));
     }
 
 }

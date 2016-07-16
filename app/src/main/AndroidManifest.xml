@@ -6,10 +6,10 @@
     <uses-permission android:name="ANDROID.PERMISSION.READ_EXTERNAL_STORAGE" />
 
     <application
+        android:name=".application.TutorApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:name=".application.TutorApplication">
+        android:label="@string/app_name" >
 
         <!-- MainActivity -->
         <activity
@@ -27,7 +27,7 @@
             android:name=".SearchActivity"
             android:label="@string/title_activity_search"
             android:launchMode="singleTop"
-            android:theme="@style/Theme.AppCompat.NoActionBar" >
+            android:theme="@style/Theme.AppCompat" >
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
@@ -44,14 +44,14 @@
         <activity
             android:name=".CourseDetailActivity"
             android:label="@string/title_activity_course_detail"
-            android:theme="@style/Theme.AppCompat.NoActionBar" >
+            android:theme="@style/Theme.AppCompat" >
         </activity>
 
         <!-- StuOrderDetailActivity -->
         <activity
             android:name=".StuOrderDetailActivity"
             android:label="@string/title_activity_order_detail"
-            android:theme="@style/Theme.AppCompat.NoActionBar" >
+            android:theme="@style/Theme.AppCompat" >
         </activity>
 
         <!-- SplashActivity -->
@@ -70,16 +70,26 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:launchMode="singleTask">
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.AppCompat.NoActionBar" >
         </activity>
 
-        <!--RegisterActivity-->
+        <!-- RegisterActivity -->
         <activity
             android:name=".RegisterActivity"
             android:label="@string/title_activity_register"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:launchMode="singleTask">
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.AppCompat.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".TutorOrderDetailActivity"
+            android:label="@string/title_activity_tutor_order_detail"
+            android:theme="@style/Theme.AppCompat" >
+        </activity>
+        <activity
+            android:name=".StuCourseDetailActivity"
+            android:label="@string/title_activity_stu_course_detail"
+            android:theme="@style/Theme.AppCompat">
         </activity>
     </application>
 

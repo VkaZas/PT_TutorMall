@@ -1,46 +1,45 @@
 package com.zju.app.tutormall.fragments;
 
-import android.app.Activity;
-import android.net.Uri;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.zju.app.tutormall.R;
+import com.zju.app.tutormall.adapters.SellCourseListAdapter;
+import com.zju.app.tutormall.application.TutorApplication;
+
 
 
 public class SellCourseFragment extends Fragment {
 
-    public SellCourseFragment() {
-        // Required empty public constructor
-    }
+    private TutorApplication app;
+    private Context context;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        app = (TutorApplication) getActivity().getApplication();
+        context = getActivity();
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sell_course, container, false);
+
+        RecyclerView rv = (RecyclerView) inflater.inflate(R.layout.fragment_sell_course, container, false);
+        setupRecyclerView(rv);
+        return rv;
     }
 
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-
+    private void setupRecyclerView(RecyclerView rv) {
+        rv.setLayoutManager(new LinearLayoutManager(rv.getContext()));
+        rv.setAdapter(new SellCourseListAdapter(getActivity(), app.teachCourseInfoList));
     }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-    }
-
-
-
 }

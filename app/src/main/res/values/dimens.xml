@@ -7,7 +7,8 @@
     <dimen name="list_item_height">90dp</dimen>
 
     <!--text size-->
-    <dimen name="list_item_text_large">20sp</dimen>
+    <dimen name="list_item_text_large">18sp</dimen>
+    <dimen name="list_item_text_midlarge">15sp</dimen>
     <dimen name="list_item_text_medium">13sp</dimen>
     <dimen name="list_item_text_small">10sp</dimen>
 
@@ -34,7 +35,9 @@
     <dimen name="edit_text_size">14sp</dimen>
 
     <!--margins-->
+    <dimen name="tiny_margin">4dp</dimen>
     <dimen name="small_margin">8dp</dimen>
     <dimen name="medium_margin">16dp</dimen>
     <dimen name="large_margin">24dp</dimen>
+    <dimen name="enormous_margin">40dp</dimen>
 </resources>

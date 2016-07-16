@@ -2,6 +2,7 @@ package com.zju.app.tutormall;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -63,11 +64,13 @@ public class RegisterActivity extends AppCompatActivity {
                                     JSONObject jObj = new JSONObject(s);
                                     Boolean success = jObj.getBoolean("success");
                                     if (success) {
-                                        // TODO: 2016/7/9 add info to the MainActivity
                                         app.setAccessToken(jObj.getString("token"));
+                                        if (jObj.has("user_name")) app.setUserName(jObj.getString("user_name"));
+                                        if (jObj.has("user_email")) app.setEmail(jObj.getString("user_email"));
                                         startActivity(new Intent(context, MainActivity.class));
                                     } else {
-                                        // TODO: 2016/7/9 add function when register fails
+                                        View rootLayout = findViewById(R.id.register_root);
+                                        Snackbar.make(rootLayout, jObj.getString("message"), Snackbar.LENGTH_LONG).show();
                                     }
                                 } catch (JSONException e) {
                                     e.printStackTrace();

@@ -2,6 +2,7 @@ package com.zju.app.tutormall;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
@@ -27,6 +29,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -34,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
     private RequestQueue requestQueue;
     Context context = this;
     private TutorApplication app;
+    private Snackbar snackbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +46,10 @@ public class LoginActivity extends AppCompatActivity {
 
         requestQueue = Volley.newRequestQueue(this);
         app = (TutorApplication) getApplication();
+
+        if (!app.getAccessToken().equals("")) {
+            startActivity(new Intent(context, MainActivity.class));
+        }
 
         final EditText etUname = (EditText) findViewById(R.id.user_name);
         final EditText etUpass = (EditText) findViewById(R.id.user_password);
@@ -71,9 +79,12 @@ public class LoginActivity extends AppCompatActivity {
                                     Boolean success = jObj.getBoolean("success");
                                     if (success) {
                                         app.setAccessToken(jObj.getString("token"));
+                                        if (jObj.has("user_name")) app.setUserName(jObj.getString("user_name"));
+                                        if (jObj.has("user_email")) app.setEmail(jObj.getString("user_email"));
                                         startActivity(new Intent(context, MainActivity.class));
                                     } else {
-                                        // TODO: 2016/7/9 add functions when login fails
+                                        View rootLayout = findViewById(R.id.login_root);
+                                        Snackbar.make(rootLayout, jObj.getString("msg"), Snackbar.LENGTH_LONG).show();
                                     }
                                 } catch (JSONException e) {
                                     e.printStackTrace();
@@ -94,7 +105,6 @@ public class LoginActivity extends AppCompatActivity {
                         return map;
                     }
                 };
-
                 requestQueue.add(stringRequest);
             }
         });

@@ -1,0 +1,163 @@
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/whitesmoke"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.v7.widget.CardView
+        android:layout_height="120dp"
+        android:layout_width="@dimen/card_item_width"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/large_margin">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/card_item_avatar_size"
+                android:layout_height="@dimen/card_item_avatar_size"
+                android:src="@drawable/bg011"
+                android:layout_marginStart="40dp"
+                android:id="@+id/view5"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentStart="true" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:background="@color/silver"
+                android:id="@+id/view4"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/student_name"
+                android:textSize="@dimen/list_item_text_medium"
+                android:textColor="@color/black"
+                android:text="陈铭业"
+                android:layout_marginEnd="14dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignEnd="@+id/view5"
+                android:layout_marginBottom="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="70dp"
+                android:text="陈铭业陈铭业陈铭业陈铭业"
+                android:textSize="@dimen/list_item_text_medium"
+                android:textColor="@color/silver"
+                android:id="@+id/student_info"
+                android:layout_marginEnd="35dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="@dimen/card_item_width"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/large_margin">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:background="@color/mainblue"
+                android:paddingLeft="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="订单详情"
+                    android:textSize="@dimen/list_item_text_medium"
+                    android:textColor="@color/whitesmoke"
+                    android:layout_gravity="center_vertical" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/transparent_del"
+                    android:clickable="true"
+                    android:layout_marginLeft="200dp"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:paddingTop="15dp"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="课程名"
+                    android:textSize="@dimen/list_item_text_small"
+                    android:textColor="@color/gray"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/course_order_name"
+                    android:text="陈铭业的课程"
+                    android:textColor="@color/dimgrey"
+                    android:textSize="@dimen/list_item_text_medium"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="订单信息"
+                    android:textSize="@dimen/list_item_text_small"
+                    android:textColor="@color/gray"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/course_order_info"
+                    android:text="订单信息信息信息"
+                    android:textColor="@color/dimgrey"
+                    android:textSize="@dimen/list_item_text_medium"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="金额"
+                    android:textSize="@dimen/list_item_text_small"
+                    android:textColor="@color/gray"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/course_order_amount"
+                    android:text="250"
+                    android:textColor="@color/dimgrey"
+                    android:textSize="@dimen/list_item_text_medium"/>
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <Button
+        android:layout_width="@dimen/card_item_width"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/large_margin"
+        android:textColor="@color/whitesmoke"
+        android:background="@color/maingreen"
+        android:textSize="@dimen/list_item_text_medium"
+        android:text="收款"
+        android:id="@+id/receive_payment"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>

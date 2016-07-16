@@ -1,0 +1,45 @@
+<LinearLayout
+    android:layout_height="wrap_content"
+    android:layout_width="300dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:padding="20dp"
+        android:background="@color/white">
+
+        <com.zju.app.tutormall.views.UnderlinedEditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/add_order_info"
+            android:textColorHint="@color/silver"
+            android:textColor="@color/black"
+            android:hint="订单简介（100字以内）"
+            android:layout_marginBottom="22dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:background="@color/mainblue"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/btn_confirm_add_order"
+            android:src="@drawable/confirm"
+            android:layout_marginLeft="120dp"
+            android:clickable="true"/>
+    </LinearLayout>
+</LinearLayout>
+

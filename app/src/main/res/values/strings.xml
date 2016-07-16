@@ -6,8 +6,8 @@
     
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="search_title">输入英雄名称</string>
-    <string name="search_hint">输入英雄的名称</string>
+    <string name="search_title">查找课程/教师</string>
+    <string name="search_hint">查找课程/教师</string>
     <string name="title_activity_search">SearchActivity</string>
     <string name="title_activity_course_detail">CourseDetailActivity</string>
     <string name="title_activity_order_detail">OrderDetailActivity</string>
@@ -16,4 +16,7 @@
     <string name="title_activity_splash">SplashActivity</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_sell_course_order">SellCourseOrderActivity</string>
+    <string name="title_activity_tutor_order_detail">TutorOrderDetailActivity</string>
+    <string name="title_activity_stu_course_detail">StuCourseDetailActivity</string>
 </resources>

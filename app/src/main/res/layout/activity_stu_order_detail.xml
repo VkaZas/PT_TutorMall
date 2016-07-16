@@ -5,6 +5,7 @@
     android:layout_width="fill_parent"
     android:orientation="vertical"
     android:background="@color/whitesmoke"
+    android:id="@+id/stu_order_root"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
@@ -15,7 +16,7 @@
         android:paddingRight="16dp">
 
         <TextView
-            android:layout_width="40dp"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:textSize="@dimen/list_item_text_small"
             android:textColor="@color/silver"
@@ -47,10 +48,10 @@
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/list_item_text_large"
                 android:text="Large TextLarge TextLarge TextLarge TextLarge TextLarge Text"
-                android:maxLines="2"
+                android:maxLines="1"
                 android:id="@+id/course_name"
                 android:textColor="@color/black"
-                android:maxWidth="200dp"
+                android:maxWidth="250dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="42dp"
@@ -73,8 +74,8 @@
                 android:layout_width="250dp"
                 android:layout_height="1px"
                 android:background="@color/gray"
-                android:layout_marginTop="20dp"
-                android:layout_below="@+id/course_info"
+                android:layout_marginBottom="60dp"
+                android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:id="@+id/view" />
 
@@ -82,18 +83,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:id="@+id/icon_paid"
-                android:src="@drawable/order_detail_CNY_nonactive"
-                android:layout_marginTop="15dp"
-                android:layout_below="@+id/view"
-                android:layout_alignStart="@+id/course_info" />
+                android:src="@drawable/order_detail_cny_active"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:src="@drawable/order_detail_CNY_active"
-                android:id="@+id/icon_unpaid"
-                android:layout_alignTop="@+id/icon_paid"
-                android:layout_alignEnd="@+id/course_name" />
 
         </RelativeLayout>
     </android.support.v7.widget.CardView>
@@ -103,6 +97,7 @@
         android:layout_height="wrap_content"
         android:text="去支付"
         android:id="@+id/pay_btn"
+        android:textColor="@color/white"
         android:layout_gravity="center_horizontal"
         android:background="@color/maingreen"
         android:layout_marginTop="@dimen/large_margin"/>
@@ -116,7 +111,7 @@
         android:layout_marginTop="@dimen/small_margin">
 
         <TextView
-            android:layout_width="40dp"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:textSize="@dimen/list_item_text_small"
             android:textColor="@color/silver"
@@ -150,14 +145,13 @@
                 android:layout_centerVertical="true"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="19dp"
-                android:src="@drawable/bg015"
-                android:id="@+id/view2" />
+                android:id="@+id/avatar" />
             <View
                 android:layout_width="1px"
                 android:layout_height="fill_parent"
                 android:background="@color/lightgray"
                 android:layout_alignParentTop="true"
-                android:layout_toEndOf="@+id/view2"
+                android:layout_toEndOf="@+id/avatar"
                 android:layout_marginStart="19dp"
                 android:id="@+id/view3" />
 
@@ -171,7 +165,7 @@
                 android:textSize="@dimen/list_item_text_medium"
                 android:textColor="@color/silver"
                 android:layout_marginStart="14dp"
-                android:layout_alignTop="@+id/view2"
+                android:layout_alignTop="@+id/avatar"
                 android:layout_toEndOf="@+id/view3" />
 
             <TextView
@@ -184,7 +178,7 @@
                 android:textSize="@dimen/list_item_text_small"
                 android:textColor="@color/silver"
                 android:layout_marginBottom="13dp"
-                android:layout_alignBottom="@+id/view2"
+                android:layout_alignBottom="@+id/avatar"
                 android:layout_alignStart="@+id/teacher_info" />
 
             <ImageView

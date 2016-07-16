@@ -7,7 +7,8 @@
     android:paddingBottom="8dp"
     android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:layout_marginTop="@dimen/small_margin">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/avatar"
@@ -21,7 +22,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/teacher_info"
+            android:id="@+id/teacher_name"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/darkgray"
@@ -30,7 +31,7 @@
             android:textSize="@dimen/list_item_text_medium"/>
 
         <TextView
-            android:id="@+id/course_info"
+            android:id="@+id/course_name"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
@@ -38,7 +39,7 @@
             android:textSize="@dimen/list_item_text_large" />
 
         <TextView
-            android:id="@+id/schedule_info"
+            android:id="@+id/extra_info"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/lightgray"

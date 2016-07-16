@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.v7.widget.CardView
+        android:layout_height="120dp"
+        android:layout_width="@dimen/card_item_width"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/small_margin"
+        android:layout_marginBottom="@dimen/small_margin">
+
+        <RelativeLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/card_item_avatar_size"
+                android:layout_height="@dimen/card_item_avatar_size"
+                android:id="@+id/order_avatar"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="11dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/list_item_text_medium"
+                android:text="学生1"
+                android:maxLines="2"
+                android:id="@+id/student_name"
+                android:textColor="@color/black"
+                android:maxWidth="200dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="16dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:maxLines="4"
+                android:textSize="@dimen/list_item_text_small"
+                android:maxWidth="150dp"
+                android:text="Small TextSmall TextSmall TextSmall TextSmall Text"
+                android:id="@+id/student_info"
+                android:layout_below="@+id/student_name"
+                android:layout_alignStart="@+id/student_name"
+                android:layout_marginTop="11dp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/icon_paid"
+                android:src="@drawable/clock"
+                android:layout_below="@+id/student_info"
+                android:layout_alignStart="@+id/student_info"
+                android:layout_marginTop="11dp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/go_check_order"
+                android:id="@+id/go_check_order"
+                android:clickable="true"
+                android:layout_marginEnd="11dp"
+                android:layout_alignTop="@+id/icon_paid"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/list_item_text_small"
+                android:text="3小时前"
+                android:id="@+id/order_create_time"
+                android:layout_marginStart="5dp"
+                android:layout_alignTop="@+id/icon_paid"
+                android:layout_toEndOf="@+id/icon_paid"
+                android:layout_marginTop="3dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dimgray"
+                android:textSize="@dimen/list_item_text_small"
+                android:text="查看详情"
+                android:clickable="true"
+                android:id="@+id/go_check_order_txt"
+                android:layout_alignTop="@+id/order_create_time"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="36dp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/delete_order"
+                android:src="@drawable/delete_course"
+                android:clickable="true"
+                android:layout_alignBottom="@+id/student_name"
+                android:layout_alignStart="@+id/go_check_order" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
